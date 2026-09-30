@@ -52,6 +52,17 @@ public class BookRepository {
 		return bookList;
 	}
 	
+	public Book getBookInfo(String bookId) {
+		Book book = null;
+		
+		for(Book b : bookList) {
+			if(b.getBookId()!=null && b.getBookId().equals(bookId)) {
+				book = b;
+			}
+		}
+		
+		return book;
+	}
 	
 
 }

@@ -26,9 +26,9 @@
 			<p class="col-md-8 fs-4">BookList</p>
 		</div>
 	</div>
-	<jsp:useBean id="bookDAO" class="com.dao.BookRepository" scope="session"/>
-	<%-- BookRepository bookDAO = new BookRepository(); 			위와 같음	--%>
+
 	<%
+		BookRepository bookDAO = new BookRepository();
 		ArrayList<Book> bookList = bookDAO.getBookList();
 	%>
 	
@@ -44,7 +44,7 @@
 				<p><%=book.getPublisher() %> | <%=book.getReleaseDate() %></p>
 				<p><%=book.getDescription().substring(0,60) %>...</p>
 				<p><%=book.getUnitPrice() %> 원</p>
-				
+				<p><a href="./book.jsp?id=<%=book.getBookId()%>" class="btn btn-secondary" role="button">상세정보 &raquo;</a></p>
 			</div>
 		</div>
 	<% } %>
