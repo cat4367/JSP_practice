@@ -7,6 +7,7 @@ import com.dto.Book;
 public class BookRepository {
 	
 	private ArrayList<Book> bookList = new ArrayList<Book>();
+	private static BookRepository instance = new BookRepository();
 	
 	public BookRepository() {
 		Book book1 = new Book();
@@ -63,6 +64,13 @@ public class BookRepository {
 		
 		return book;
 	}
+
+	public static BookRepository getInstance() {
+		return instance;
+	}
 	
+	public void addBook(Book book) {
+		bookList.add(book);
+	}
 
 }

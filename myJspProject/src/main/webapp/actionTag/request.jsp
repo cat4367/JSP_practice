@@ -14,7 +14,7 @@
 	<input type="submit" value="전송">
 </form>
 <hr>
-<form action="response01_process.jsp" method="post">
+<form action="response01_process.jsp" method="post" target="_blank">
 	<h3>response 확인하기</h3>
 	아이디 : <input type="text" name="userId"><br>
 	비밀번호 : <input type="password" name="userPwd"><br>
@@ -30,7 +30,7 @@
 <form action="response_practice.jsp" method="post">
 	<select name="sel">
 		<option value=" " label="선택">
-		<option value="N" label="네이버">
+		<option value="N" label="네이버" selected>
 		<option value="G" label="구글">
 		<option value="D" label="다음">
 	</select>

@@ -5,11 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
+<div class="container py-4">
 	<header class="pb-3 mb-4 border-bottom">
-	<div class="sticky-top">아이디 <input type="text" name="userId">
-	비밀번호 <input type="password" name="userPwd"></div>
+
 		<a href="./welcome.jsp" class="me-4 align-items-center text-dark text-decoration-none">
 			<svg width="32" height="32" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
 				<path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
@@ -18,11 +19,12 @@
 			<span class="fs-4">Home</span>
 		</a>
 		<a href="./booklist.jsp" class="me-4 align-items-center text-dark text-decoration-none">
-			<span class="fs-4">list(스크립틀)</span>
+			<span class="fs-4">List</span>
 		</a>
-		<a href="./booklist2.jsp" class="me-4 align-items-center text-dark text-decoration-none">
-			<span class="fs-4">list(JSTL)</span>
+		<a href="./memberlist.jsp" class="me-4 align-items-center text-dark text-decoration-none">
+			<span class="fs-4">Member</span>
 		</a>
+
 	</header>
 </body>
 </html>
