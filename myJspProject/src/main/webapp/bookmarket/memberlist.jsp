@@ -1,5 +1,9 @@
+<%@page import="com.dto.Member"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.dao.MemberRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +23,42 @@
 			<a href="./addMember.jsp" class="btn btn-warning" role="button">멤버 추가 &raquo;</a>
 		</div>
 	</div>
+	
+	<%
+		MemberRepository memberDAO = MemberRepository.getInstance();
+		ArrayList<Member> memberList = memberDAO.getMemberList();
+	%>
+	
+	<div class="container my-4">
+		<table class="table table-hover table-bordered text-center align-middle">
+			<thead class="table-dark">
+				<th scope="col">회원 번호</th>
+				<th scope="col">회원 ID</th>
+				<th scope="col">이름</th>
+				<th scope="col">연락처</th>
+				<th scope="col">이메일</th>
+				<th scope="col">상세보기</th>
+			</thead>
+			<tbody class="table-group-divider">
+				<% 
+					for(int i = 0; i < memberList.size(); i++){
+						Member member = memberList.get(i);
+				%>
+				<tr>
+					<td><%= member.getUserSeq()%></td>
+					<td><%= member.getId() %></td>
+					<td><%= member.getName() %></td>
+					<td><%= member.getTel() %></td>
+					<td><%= member.getEmail() %></td>
+					<td><a href="./member.jsp?id=<%= member.getId() %>" class="btn btn-sm btn-outline-primary" role="button">상세보기 &raquo;</a></td>
+				</tr>
+				<%} %>
+			</tbody>
+		</table>
+	</div>
+	
+	
+	
 
 <jsp:include page="footer.jsp" flush="false"/>
 </body>

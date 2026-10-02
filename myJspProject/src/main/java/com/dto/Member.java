@@ -14,6 +14,9 @@ public class Member implements Serializable {
 	private String birth;		// 생년월일
 	private String cls;			// 등급 (N : 일반 / V : VIP)
 	private int footSize;		// 신발사이즈
+	
+	
+	
 	public String getUserSeq() {
 		return userSeq;
 	}

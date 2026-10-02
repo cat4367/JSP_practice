@@ -31,7 +31,7 @@
 	<div class="row align-items-md-stretch">
 		<div class="col-md-12">
 			<h3><b><%=book.getName() %></b></h3>
-			<p><b>도서코드<b> : <span class="badge text-bg-danger"><%=book.getBookId() %></span></p>
+			<p><b>도서코드<b/> : <span class="badge text-bg-danger"><%=book.getBookId() %></span></p>
 			<p><b>저자</b> : <%=book.getAuthor() %></p>
 			<p><b>출판사</b> : <%=book.getPublisher() %></p>
 			<p><b>출판일</b> : <%=book.getReleaseDate() %></p>
