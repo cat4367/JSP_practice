@@ -21,7 +21,7 @@
 	</div>
 	
 	<div class="row align-items-md-stretch">
-		<form name="newBook" action="./processAddBook.jsp" method="post">
+		<form name="newBook" action="./processAddBook.jsp" method="post" onsubmit="return false;">
 			<div class="mb-3 row">
 				<label class="col-sm-2">도서코드</label>
 				<div class="col-sm-3">
@@ -86,7 +86,7 @@
 			</div>
 			<div class="mb-3 row">
 				<div class="col-sm-offset-2 col-sm-10">
-					<input type="submit" class="btn btn-primary" value="등록">
+					<input type="submit" class="btn btn-primary" value="등록" onclick="form_submit()">
 				</div>
 			</div>
 		</form>
@@ -96,4 +96,59 @@
 	
 <jsp:include page="footer.jsp"/>
 </body>
+<script type="text/javascript">
+function form_submit(){
+	let bId = document.newBook.bookId.value;
+	let bname = document.newBook.name.value;
+	let bauthor = document.newBook.author.value;
+	let bpublisher = document.newBook.publisher.value;
+	let brelease = document.newBook.releaseDate.value;
+	let bdescription = document.newBook.description.value;
+	let bprice = document.newBook.unitPrice.value;
+	
+	
+	if(bId == ""){
+		alert("도서코드 입력해주세요.");
+		document.newBook.bookId.focus();
+		return false;
+	}
+	if(bname == ""){
+		alert("도서명을 입력해주세요.");
+		document.newBook.name.focus();
+		return false;
+	}
+	if(bprice == ""){
+		alert("가격을 입력해주세요.");
+		document.newBook.unitPrice.focus();
+		return false;
+	}
+	if(bauthor == ""){
+		alert("저자를 입력해주세요.");
+		document.newBook.author.focus();
+		return false;
+	}
+	if(bpublisher == ""){
+		alert("출판사를 입력해주세요.");
+		document.newBook.publisher.focus();
+		return false;
+	}
+	if(brelease == ""){
+		alert("출판일을 입력해주세요.");
+		document.newBook.releaseDate.focus();
+		return false;
+	}
+	if(bdescription == ""){
+		alert("상세정보를 입력해주세요.");
+		document.newBook.description.focus();
+		return false;
+	}else if(bdescription.length < 100){
+		alert("100글자 이상 입력해 주세요.")
+		document.newBook.description.focus();
+		return false;
+	}
+	
+	
+	document.newBook.submit();
+}
+</script>
 </html>

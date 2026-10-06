@@ -6,10 +6,23 @@
 <meta charset="UTF-8">
 <title>form01</title>
 </head>
+<script type="text/javascript">
+function form_submit(){
+	let id = document.member111.id.value;
+	let pwd = document.member111.passwd.value
+
+	const regex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{10}$/
+	alert(id);
+	if(!regex.test(pwd)){
+		alert("비밀번호 형식이 잘못 되었습니다.")
+	};
+	document.member111.submit();
+}
+</script>
 <body>
 	<h3>회원 가입</h3>
-	<form action="form01_process.jsp" name="member" method="get">
-		<p> 아이디 : <input type="text" name="id"> <input type="button" value="아이디 중복 검사">
+	<form action="form01_process.jsp" id="member123" name="member111" method="get" onsubmit="return false;">
+		<p> 아이디 : <input type="text" name="id" required="required"> <input type="button" value="아이디 중복 검사">
 		<p> 비밀번호 : <input type="password" name="passwd">
 		<p> 이름 : <input type="text" name="name">
 		<p> 연락처 : <select name="phone">
@@ -24,7 +37,7 @@
 					운동<input type="checkbox" name="hobby" value="운동">
 					영화<input type="checkbox" name="hobby" value="영화">
 		<p> <textarea name="comment" cols="30" rows="3" placeholder="가입 인사를 입력해 주세요"></textarea>
-		<p> <input type="submit" value="가입하기">
+		<p> <input type="submit" value="가입하기" onclick="form_submit()">
 			<input type="reset" value="다시쓰기">
 		 
 	</form>

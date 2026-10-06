@@ -45,7 +45,7 @@
 						Member member = memberList.get(i);
 				%>
 				<tr>
-					<td><%= member.getUserSeq()%></td>
+					<td><b><%= member.getUserSeq()%></b></td>
 					<td><%= member.getId() %></td>
 					<td><%= member.getName() %></td>
 					<td><%= member.getTel() %></td>
