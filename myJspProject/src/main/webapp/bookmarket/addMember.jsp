@@ -129,18 +129,9 @@ function form_submit(){
 	let m_pwd = document.newMember.memberPwd.value;
 	let m_name = document.newMember.memberName.value;
 	let m_gender = document.newMember.memberGender.value;
-	let m_tel = document.newMember["memberTel" + 1].value;
+
 	
-	console.log("확인");
-	for(let i = 1;i <= 3; i++){
-		let m_tel = document.newMember["memberTel" + i];
-		console.log(m_tel);
-		if(m_tel == ""){
-			alert("휴대폰번호" + i + "번째 칸을 입력해주세요.")
-			m_tel.focus();
-			return false;
-		}
-	}
+	
 	
 	if(m_id == ""){
 		alert("ID를 입력해주세요.");
@@ -170,15 +161,21 @@ function form_submit(){
 		document.newMember.memberGender.focuse();
 		return false;
 	}
-	if(m_gender == ""){
-		alert("성별을 선택해주세요.")
-		document.newMember.memberGender.focuse();
-		return false;
+	for(let i = 1; i <= 3; i++){
+		let m_tel = document.newMember["memberTel" + i];
+		if(m_tel.value == ""){
+			alert("휴대폰번호 " + i + "번째 칸을 입력해주세요.");
+			m_tel.focus();
+			return false;
+		}
 	}
-	if(m_gender == ""){
-		alert("성별을 선택해주세요.")
-		document.newMember.memberGender.focuse();
-		return false;
+	for(let i = 1; i <= 2; i++){
+		let m_email = document.newMember["memberEmail" + i];
+		if(m_email.value == ""){
+			alert("E-mail을 작성해주세요.");
+			m_email.focus();
+			return false;
+		}
 	}
 	
 	document.newMember.submit();
