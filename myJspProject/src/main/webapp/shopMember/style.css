@@ -1,0 +1,88 @@
+@charset "UTF-8";
+body{
+	flex-direction: column;
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+}
+header>div{
+	display: flex;
+}
+header>div>h1{
+	flex: 1;
+}
+h2{
+	text-align: center;
+}
+header{
+	background-color: #0B3C9EFF;
+	font-weight: bold;
+	color: white;
+	margin-top: 0;
+	text-align: center;
+	align-items: center;
+}
+nav{
+	display: flex;
+	background-color: #5585E6FF;
+	align-items: center;
+	gap: 20px;
+	height: 35px;
+	padding-left: 20px;
+}
+a{
+	text-decoration: none;
+}
+form{
+	text-align: center;
+	font-size: 1.2em;
+}
+label{
+	text-align: justify;
+	display: inline-block;
+	box-sizing: border-box;
+	width: 200px;
+	height: 30px;
+}
+div>input{
+	width: 200px;
+	height: 27px;
+	font-size: 1.05em;
+}
+.submit{
+	margin: 20px;
+	font-size: 1.1em;
+}
+	
+footer{
+	height: 35px;
+	background-color: #0B3C9EFF;
+	font-weight: normal;
+	font-size: 0.5em;
+	text-align: center;
+	color: white;
+	display: flex;
+}
+footer>p{
+	flex: 1;
+}
+main{
+	box-sizing: border-box;
+	width: 800px;
+	height: 100%;
+	margin: 0 auto;
+}
+table{
+	border: solid 1px;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th{
+	background-color: #8D939EFF;
+	border: solid 1px;
+}
+td{
+	text-align: center;
+	border: solid 1px;
+}
