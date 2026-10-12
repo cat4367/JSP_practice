@@ -1,0 +1,19 @@
+select * from book;
+create table member(
+	userSeq varchar(10) not null,
+	id varchar(20) not null,
+	pwd varchar(20) not null,
+	name varchar(20) not null,
+	gender varchar(10),
+	age integer,
+	tel varchar(15),
+	email varchar(50),
+	birth varchar(20),
+	cls varchar(10),
+	footsize integer,
+	primary key (userSeq)
+);
+insert into member values("USER0001","gudals123","123456","Á¤Çü¹Î","M",30,"010-1111-2222","gudals@naver.com","2004-04-04","V",260);
+insert into member values("USER0002","guild2000","k312333","È«±æµ¿","F",23,"010-0002-3000","dong0200@daum.net","2005-01-31","N",240);
+insert into member values("USER0003","pppa1002","hidden2","±èÈñ¿µ","F",40,"010-1223-3333","google2222@google.com","1986-05-23","N",230);
+select * from member;

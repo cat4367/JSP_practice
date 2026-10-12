@@ -1,0 +1,24 @@
+<%@page import="java.sql.*"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	Connection conn = null;
+	Statement stmt= null;
+	try{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/JSPBookDB","root","admin");
+
+	}catch(SQLException e){
+		out.print("!");
+	}
+%>
+</body>
+</html>
