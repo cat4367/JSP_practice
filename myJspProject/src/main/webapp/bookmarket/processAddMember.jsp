@@ -1,3 +1,4 @@
+<%@page import="java.sql.*"%>
 <%@page import="com.dto.Member"%>
 <%@page import="com.dao.MemberRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -21,8 +22,10 @@
 //	String tel1 = request.getParameter("memberTel1");			// 연락처	>2칸 앞(select) 뒤 8자리(text)
 //	String tel2 = request.getParameter("memberTel2");			
 //	String tel3 = request.getParameter("memberTel3");		
-	String email1 = request.getParameter("memberEmail1");		// 이메일	>2칸 앞(text) 뒤 (select)
-	String email2 = request.getParameter("memberEmail2");		
+	String tel = request.getParameter("memberTel1") + "-" + request.getParameter("memberTel2")+ "-" + request.getParameter("memberTel3");
+//	String email1 = request.getParameter("memberEmail1");		// 이메일	>2칸 앞(text) 뒤 (select)
+//	String email2 = request.getParameter("memberEmail2");		
+	String email = request.getParameter("memberEmail1") + "@" + request.getParameter("memberEmail2");
 	String birth = request.getParameter("memberBirth");			// 생년월일
 	String cls = request.getParameter("memberCls");				// 등급 (N : 일반 / V : VIP)
 	String fs = request.getParameter("memberFootSize");			// 신발사이즈
@@ -37,9 +40,34 @@
 		footSize = 0;
 	}else footSize = Integer.parseInt(fs);
 	
-//	String tel = tel1 + "-" + tel2 + "-" + tel3;
-	String email = email1 + "@" + email2;
 	
+	Connection conn = null;
+	Statement stmt = null;
+	
+	try{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql//localhost:3306/bookmarketdb","root","admin");
+		stmt = conn.createStatement();
+		
+		String sql = "INSERT INTO member(userSeq,id,pwd,name,gender,age,tel,email,birth,cls,footsize)" + 
+		"VALUES('"+ userSeq + "','"+ id + "','"+ pwd + "','"+ name + "','"+ gender + "','"+ i_age + "','"+ tel + "','"+ email + "','"+ birth + "','"+ cls + "','"+ fs + "')";
+		out.print(sql);
+		int rs = stmt.executeUpdate(sql);
+		out.print(rs);
+		
+		conn.close();
+		stmt.close();
+		
+	}catch(Exception e){
+		out.print(e.getMessage());
+	}
+	
+	
+	
+	
+	
+	
+/*
 	MemberRepository dao = MemberRepository.getInstance();
 	
 	Member newMember = new Member();
@@ -56,7 +84,7 @@
 	newMember.setCls(cls);
 	newMember.setFootSize(footSize);
 	
-	dao.addMember(newMember);
+	dao.addMember(newMember); */
 	
 	response.sendRedirect("memberlist.jsp");
 %>

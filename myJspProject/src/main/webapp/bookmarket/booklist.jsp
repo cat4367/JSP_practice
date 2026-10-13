@@ -28,7 +28,7 @@
 	</div>
 
 	<%
-		BookRepository bookDAO = BookRepository.getInstance();
+		BookRepository bookDAO = new BookRepository();
 		ArrayList<Book> bookList = bookDAO.getBookList();
 	%>
 	

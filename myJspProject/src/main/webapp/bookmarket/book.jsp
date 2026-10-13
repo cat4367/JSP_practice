@@ -24,7 +24,7 @@
 	</div>
 
 <%
-	BookRepository bookDAO = BookRepository.getInstance();
+	BookRepository bookDAO = new BookRepository();
 	String bookId = request.getParameter("id");
 	Book book = bookDAO.getBookInfo(bookId);
 %>

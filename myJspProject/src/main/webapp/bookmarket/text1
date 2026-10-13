@@ -17,3 +17,4 @@ insert into member values("USER0001","gudals123","123456","Á¤Çü¹Î","M",30,"010-1
 insert into member values("USER0002","guild2000","k312333","È«±æµ¿","F",23,"010-0002-3000","dong0200@daum.net","2005-01-31","N",240);
 insert into member values("USER0003","pppa1002","hidden2","±èÈñ¿µ","F",40,"010-1223-3333","google2222@google.com","1986-05-23","N",230);
 select * from member;
+delete from book where b_id = 'ISBN1303';

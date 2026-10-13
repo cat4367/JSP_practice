@@ -1,6 +1,6 @@
 package com.dto;
 
-import java.io.Serializable;
+import java.io.Serializable;	//한줄로 배열화시키는거
 
 public class Book implements Serializable {
 	private String bookId;			//도서 ID

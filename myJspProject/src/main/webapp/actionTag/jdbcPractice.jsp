@@ -15,7 +15,8 @@
 	try{
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/JSPBookDB","root","admin");
-
+		stmt = conn.createStatement();
+		
 	}catch(SQLException e){
 		out.print("!");
 	}
